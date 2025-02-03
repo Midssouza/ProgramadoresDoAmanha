@@ -1,7 +1,7 @@
 /**
  * Fundamentos do banco de dados MySQL - Aula 3
  * Projeto: Agenda de Contatos
- * @author Professora Michelle de Souza 
+ 
  */
 
 use dbagenda;
