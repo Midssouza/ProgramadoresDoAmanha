@@ -29,9 +29,7 @@ Se a transação não for confirmada (COMMIT), e houver um problema antes disso,
 
 
 
-![image](https://github.com/user-attachments/assets/3f889a0b-1e6a-48c2-ab19-44a2f09279de)
-
-Neste caso, se ambas as atualizações ocorrerem com sucesso, o comando COMMIT confirma as alterações e elas são permanentemente registradas no banco de dados.
+* Neste caso, se ambas as atualizações ocorrerem com sucesso, o comando COMMIT confirma as alterações e elas são permanentemente registradas no banco de dados.
 
 **Fluxo de Trabalho com Transações**
 
@@ -50,3 +48,9 @@ Se algum erro ocorrer durante as operações, podemos utilizar o ROLLBACK para r
 
 
 ![image](https://github.com/user-attachments/assets/0df20369-a667-48f7-9152-083062a4c769)
+
+
+> Resumo
+> **COMMIT** = Garante que os dados sejam permanentes (Durabilidade).
+> **ROLLBACK** = Desfaz a transação antes do COMMIT.
+> **Sem COMMIT** = Dados podem ser perdidos em caso de falha.
