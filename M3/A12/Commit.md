@@ -42,15 +42,16 @@ Se a transação não for confirmada (COMMIT), e houver um problema antes disso,
 
 Aqui está um exemplo completo de como usar transações para transferir dinheiro entre duas contas bancárias:
 
-![image](https://github.com/user-attachments/assets/d807bc05-0442-4326-af52-b5daa4cc63e1)
+![image](https://github.com/user-attachments/assets/1f33fd71-7014-4fd4-88a4-25aedba79ccf)
+
 
 Se algum erro ocorrer durante as operações, podemos utilizar o ROLLBACK para reverter qualquer alteração:
 
+![image](https://github.com/user-attachments/assets/beaa14f8-3b75-47ef-8242-8dabd771d625)
 
-![image](https://github.com/user-attachments/assets/0df20369-a667-48f7-9152-083062a4c769)
 
 
-> Resumo
-> **COMMIT** = Garante que os dados sejam permanentes (Durabilidade).
-> **ROLLBACK** = Desfaz a transação antes do COMMIT.
-> **Sem COMMIT** = Dados podem ser perdidos em caso de falha.
+> Resumo <br>
+> **COMMIT** = Garante que os dados sejam permanentes (Durabilidade).<br>
+> **ROLLBACK** = Desfaz a transação antes do COMMIT.<br>
+> **Sem COMMIT** = Dados podem ser perdidos em caso de falha.<br>
