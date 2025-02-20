@@ -30,47 +30,30 @@ Exemplo:
 
 Neste exemplo, iniciamos uma transação onde estamos transferindo dinheiro de uma conta para outra. Se houver um erro durante o processo, queremos garantir que nenhuma mudança seja salva.
 
-2. **ROLLBACK**
 
-O comando ROLLBACK é usado para desfazer todas as operações realizadas desde o início da transação. Caso ocorra um erro ou qualquer problema durante a transação, podemos usar o ROLLBACK para garantir que os dados não sejam alterados.
-
-
-![image](https://github.com/user-attachments/assets/76a7d5f1-1eac-419c-ae67-aa5f2f9fd9ae)
-
-Exemplo: 
-
-
-![image](https://github.com/user-attachments/assets/2a97ec27-2bb3-4578-ba63-a43c67817ce0)
-
-
-Se, por exemplo, a segunda atualização falhar, o comando ROLLBACK irá reverter a transação, fazendo com que as alterações não sejam persistidas no banco de dados.
-
-3. **COMMIT**
-   
-O comando COMMIT é utilizado para confirmar as operações realizadas durante a transação. Após o COMMIT, as mudanças realizadas são permanentes e visíveis para outras transações.
+✅ **Quando usar transações?**
+ * Operações que envolvem múltiplas tabelas
+Exemplo: Criar um pedido e salvar seus itens.
+* Evitar dados inconsistentes
+Exemplo: Transferência bancária (deve debitar de um lado e creditar do outro).
+* Evitar registros parciais em caso de erro
+Exemplo: Se um dos INSERTs falhar, os anteriores não devem ser salvos.
+* Manter a integridade do banco
+Exemplo: Evitar que uma venda seja confirmada sem estoque suficiente.
 
 
-![image](https://github.com/user-attachments/assets/3f889a0b-1e6a-48c2-ab19-44a2f09279de)
-
-Neste caso, se ambas as atualizações ocorrerem com sucesso, o comando COMMIT confirma as alterações e elas são permanentemente registradas no banco de dados.
-
-**Fluxo de Trabalho com Transações**
-
-1. **Iniciar a transação**  com *START TRANSACTION.*
-2. **Realizar operações** (INSERT, UPDATE, DELETE) necessárias.
-3. Caso tudo ocorra bem, **confirmar a transação** com *COMMIT.*
-4. Se ocorrer algum erro, **reverter as operações** com *ROLLBACK.*
-
-**Exemplo Completo**
-
-Aqui está um exemplo completo de como usar transações para transferir dinheiro entre duas contas bancárias:
-
-![image](https://github.com/user-attachments/assets/d807bc05-0442-4326-af52-b5daa4cc63e1)
-
-Se algum erro ocorrer durante as operações, podemos utilizar o ROLLBACK para reverter qualquer alteração:
+📌 **Quando NÃO precisa de transação?**
+Consultas simples (SELECT)
+INSERT, UPDATE, DELETE que não dependem de múltiplas operações
+Criação do banco (CREATE DATABASE) ou tabelas (CREATE TABLE)
+Essas operações já são "auto commit", ou seja, são permanentes sem precisar de transação.
 
 
-![image](https://github.com/user-attachments/assets/0df20369-a667-48f7-9152-083062a4c769)
+📌 ### Exemplo de Quando Usar Transação
+📌 Cenário: Criar um pedido e salvar os itens na tabela itens_pedido. Se uma das inserções falhar, nenhuma deve ser salva.
+
+![image](https://github.com/user-attachments/assets/4735fa26-46ec-4083-84e3-a911939f822a)
+
 
 **Boas Práticas com Transações**
 
