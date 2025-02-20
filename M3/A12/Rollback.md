@@ -3,13 +3,14 @@
 O comando ROLLBACK é usado para desfazer todas as operações realizadas desde o início da transação. Caso ocorra um erro ou qualquer problema durante a transação, podemos usar o ROLLBACK para garantir que os dados não sejam alterados.
 O ROLLBACK é específico para transações em bancos de dados que suportam o conceito de transação (como MySQL com InnoDB, PostgreSQL, SQL Server, etc.). Ele desfaz todas as operações realizadas desde o último START TRANSACTION, retornando o banco ao estado anterior.
 
+![image](https://github.com/user-attachments/assets/81918061-4042-4c34-aadf-3c6b9bae4fa8)
 
-![image](https://github.com/user-attachments/assets/76a7d5f1-1eac-419c-ae67-aa5f2f9fd9ae)
 
 Exemplo: 
 
 
-![image](https://github.com/user-attachments/assets/2a97ec27-2bb3-4578-ba63-a43c67817ce0)
+![image](https://github.com/user-attachments/assets/152e3876-c6d6-4ce2-b56d-d4e2b711c6a6)
+
 
 
 Se, por exemplo, a segunda atualização falhar, o comando ROLLBACK irá reverter a transação, fazendo com que as alterações não sejam persistidas no banco de dados.
